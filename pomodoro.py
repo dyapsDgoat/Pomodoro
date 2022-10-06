@@ -7,15 +7,19 @@ root = Tk()
 root.geometry("300x300")
 
 root.title("Pomodoro by Dyaps")
+#bg = PhotoImage (file = "BLACK.png")
+#label1 = Label( root, image = bg)
+#label1.place(x = 0, y = 0)
 
+root.configure(bg = "#DFE2FE")
 
 minute = StringVar()
 second = StringVar()
 
-Entry (root, width = 5, font = ("Tahoma", 18, ""),textvariable=minute).place (x = 70, y = 50)
+Entry (root, width = 5, font = ("Tahoma", 18, ""),textvariable=minute, justify=CENTER, bg = "#B1CBFA",).place (x = 70, y = 50)
 minute.set("00")
 
-Entry (root, width = 5, font = ("Tahoma", 18, ""),textvariable=second).place (x = 180, y = 50)
+Entry (root, width = 5, font = ("Tahoma", 18, ""),textvariable=second, justify=CENTER, bg = "#B1CBFA").place (x = 180, y = 50)
 second.set("00")
 
 def pomodoro():
@@ -43,16 +47,18 @@ def startTime():
         time.sleep(1)
         
         if temp == 0:
-            playsound('/home/dyaps/Documents/Programming/Python/goat.mp3')
+            playsound('goat.mp3')
         temp -= 1
-           
+
+start = PhotoImage (file = "START1.png")
+
 pomodoroBtn = Button (root, text = "Pomodoro", bd = "3",
-                      command = pomodoro).place(x = 40, y  = 120)
+                      command = pomodoro, bg="#B1CBFA").place(x = 20, y  = 218)
 
 breakTimeBtn = Button (root, text = "Break   ", bd = "3",
-                       command = shortBreak).place (x = 150, y = 120)
+                       command = shortBreak, bg="#B1CBFA").place (x = 20, y = 250)
 
-startBtn = Button (root, text = "Start Pomodoro", bd = "3",
-                       command = startTime).place (x = 120, y = 200)
+startBtn = Button (root, text = "", image = start , compound= TOP
+                       , command = startTime, bg="#B1CBFA").place (x = 100, y = 100)
 
 root.mainloop()
