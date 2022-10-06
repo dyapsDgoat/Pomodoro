@@ -7,9 +7,7 @@ root = Tk()
 root.geometry("300x300")
 
 root.title("Pomodoro by Dyaps")
-#bg = PhotoImage (file = "BLACK.png")
-#label1 = Label( root, image = bg)
-#label1.place(x = 0, y = 0)
+
 
 root.configure(bg = "#DFE2FE")
 
