@@ -1,2 +1,2 @@
 # Python-Projects
-GUI Python Projects
+Simple POMODORO using PyGUI
